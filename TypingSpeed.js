@@ -31,16 +31,14 @@ const SetofWords= [
 ];
 
 
-const startGame = () => {
+const start = () => {
 let index= Math.floor(Math.random()*SetofWords.length);
 $("#message").html(SetofWords[index]);
 let date= new Date();
 startTime = date.getTime();
-
-
 }
 
-const endGame= () => {
+const end= () => {
 	let date= new Date();
 	let endTime= date.getTime();
 	let timeTaken= (endTime-startTime-800)/1000;
@@ -63,7 +61,10 @@ const endGame= () => {
 	console.log('Total Words:'+wordsCount+ 'Correct Words:'+correctWords);
 	
 
-	$("#result h4").html('Speed: '+ speed+" wpm" + '<br>'+'Words Typed: '+ wordsCount + '<br>' +'Correct Words: '+ correctWords);
+	$("#result h4").html(`Speed:  ${speed} wpm <br> 
+						Words Typed: ${wordsCount}  <br> 
+						Correct Words: ${correctWords} <br> 
+						Accuracy:	${Math.round((correctWords/wordsCount)*100)}%`);
 	$("#message").html("Text will appear here once you click on Start");
 	$("#text").prop("disabled",true);
 }
@@ -92,7 +93,7 @@ button.addEventListener('click',function(){
 		this.innerText="Stop";
 		$("#result").fadeOut();
 		$("#text").prop("disabled",false);
-		startGame();
+		start();
 
 	}
 	else
@@ -100,7 +101,7 @@ button.addEventListener('click',function(){
 		$("#result").fadeIn();
 		console.log('Stopped');
 		$(this).html("Start");
-		endGame();
+		end();
 		
 
 	}
