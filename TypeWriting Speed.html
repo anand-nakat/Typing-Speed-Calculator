@@ -28,22 +28,20 @@ animation-iteration-count: infinite;
 }
 	
 .main{
-	width: 100%;
-	height: 100vh;
-	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
 }
 
 .content{
-	position:  absolute;
-	top: 50%;
-	left: 50%;
-	transform:  translate(-50%,-50%);
+
 	text-align: center;
 	}
 
 .content h1{
-	font-family: 'Kufam', cursive;
+	/* font-family: 'Kufam', cursive; */
 }
 
 #message{
@@ -95,7 +93,7 @@ animation-iteration-count: infinite;
 
 
 
-	<div class="main">
+	<div class="main my-5">
 
 
 			<div class="content container-fluid">
@@ -103,19 +101,21 @@ animation-iteration-count: infinite;
 
 					<h1 class="text-white font-weight-bold"> Check your Typing Speed & Accuracy </h1> <br>
 
-					<h3 id="message" class="text-dark mx-4 text-justify my-4">Text will appear here once you click on Start</h3>
+					<h3 id="message" class="text-dark mx-4 text-center my-4">Text will appear here once you click on Start</h3>
 
 					<textarea tabindex="0" autocomplete="off" id="text" rows="10" class=" bg-dark text-white" ></textarea>
 					<br><br>
 					<button class="btn btn-light px-4" id="start-btn" style="font-size: 25px;">Start</button>
 
-						
-						<div id="result" class="mt-2 text-center">
-						<h4  class="text-white"></h4>
-						<div>
-			
+			</div>
+
+			<div id="result" class="mt-2 pt-2  text-center">
+					
+					<h4  class="text-dark"></h4>
+
+			</div>
+
 	</div>
-</div>
 
 </body>
 <script src="TypingSpeed.js"></script>
